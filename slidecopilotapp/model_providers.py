@@ -1,8 +1,11 @@
 
 import json, os
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_API_KEY = "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"
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+OPENAI_MODEL = "gpt-4o-mini"       # or "gpt-4o" if you have access
+GEMINI_MODEL = "gemini-1.5-pro"    # or whichever you use
+
 
 def _fallback_outline(prompt: str) -> list:
     return [
@@ -43,7 +46,7 @@ def generate_outline_with_openai(context: str, prompt: str, brand_rules: str = "
         sys = _format_system_prompt(brand_rules)
         user = _outline_instructions(context, prompt)
         resp = client.chat.completions.create(
-            model=os.getenv("OPENAI_MODEL","gpt-4o-mini"),
+            model=OPENAI_MODEL,
             messages=[{"role":"system", "content": sys},
                       {"role":"user", "content": user}],
             temperature=0.2,
