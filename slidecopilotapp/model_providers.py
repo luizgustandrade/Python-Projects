@@ -1,11 +1,17 @@
 
-import json, os
+import json, os, re
 
-OPENAI_API_KEY = "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"
+
+OPENAI_API_KEY = "xxxxxx"
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 OPENAI_MODEL = "gpt-4o-mini"       # or "gpt-4o" if you have access
 GEMINI_MODEL = "gemini-1.5-pro"    # or whichever you use
 
+mask = lambda s: (s[:4] + "..." + s[-4:]) if s and len(s) > 10 else str(bool(s))
+st.sidebar.info(
+    "Provider selection is in the Settings.\n\n"
+    f"OPENAI_API_KEY: {mask(os.getenv('OPENAI_API_KEY'))}\n"
+    f"GEMINI_API_KEY: {mask(os.getenv('GEMINI_API_KEY'))}"
 
 def _fallback_outline(prompt: str) -> list:
     return [
@@ -37,24 +43,56 @@ Keep bullets concise (≤12 words), ≤6 bullets per slide.
 """
     return f"Context:\n{context}\n\nUser prompt:\n{user_prompt}\n\n{schema}"
 
+
 def generate_outline_with_openai(context: str, prompt: str, brand_rules: str = "") -> list:
-    if not OPENAI_API_KEY:
+    if not OPENAI_API_KEY or OPENAI_API_KEY.strip() == "":
         return _fallback_outline(prompt)
+
     try:
         from openai import OpenAI
         client = OpenAI(api_key=OPENAI_API_KEY)
+
         sys = _format_system_prompt(brand_rules)
         user = _outline_instructions(context, prompt)
+
+      
         resp = client.chat.completions.create(
             model=OPENAI_MODEL,
-            messages=[{"role":"system", "content": sys},
-                      {"role":"user", "content": user}],
-            temperature=0.2,
-        )
-        text = resp.choices[0].message.content
+            messages=[
+                {"role": "system", "content": sys},
+                {"role": "user", "content": user},
+        ],
+        temperature=0.2,
+    )
+
+
+        text = (resp.choices[0].message.content or "").strip()
+
+        # Robust JSON extraction: grab the outermost JSON array if present
+        # Works even if the model adds some explanation around it.
+        start = text.find("[")
+        end = text.rfind("]")
+        if start != -1 and end != -1:
+            return json.loads(text[start:end+1])
+
+        # If it's a JSON object with a 'slides' field, accept that too
+        if text.startswith("{"):
+            obj = json.loads(text)
+            if isinstance(obj, dict) and "slides" in obj:
+                return obj["slides"]
+
+        # Last resort: parse as-is
         return json.loads(text)
+
     except Exception as e:
-        return _fallback_outline(f"{prompt} (fallback due to: {e})")
+        # Surface the real error in the UI so you can see what's wrong
+        return [
+            {"layout": "title_content",
+             "title": "Model Error (OpenAI)",
+             "bullets": [type(e).__name__, str(e)[:180], "Check venv, packages, and API key."],
+             "notes": ""}
+        ]
+
 
 def generate_outline_with_gemini(context: str, prompt: str, brand_rules: str = "") -> list:
     if not GEMINI_API_KEY:
