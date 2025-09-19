@@ -10,7 +10,7 @@ import os, json, re
 from typing import List, Tuple
 
 # ====== Keys & models ======
-OPENAI_API_KEY = "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"      # e.g., "sk-..."; leave empty to read from env
+OPENAI_API_KEY = ""      # e.g., "sk-..."; leave empty to read from env
 GEMINI_API_KEY = ""      # e.g., "AIza-..."; leave empty to read from env
 
 if not OPENAI_API_KEY:
