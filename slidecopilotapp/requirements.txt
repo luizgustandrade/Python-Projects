@@ -1,8 +1,0 @@
-
-streamlit
-python-pptx
-scikit-learn
-pdfplumber
-python-docx
-openai>=1.0.0
-google-generativeai
