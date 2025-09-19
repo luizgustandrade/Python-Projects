@@ -9,7 +9,7 @@ import os, io, json, re
 from typing import List, Tuple
 
 # ---------- RAG + LLM (copied/minified from Step 2) ----------
-OPENAI_API_KEY = "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"      # e.g., "sk-..."; leave empty to read from env
+OPENAI_API_KEY = ""      # e.g., "sk-..."; leave empty to read from env
 #OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
