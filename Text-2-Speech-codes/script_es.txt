@@ -1,0 +1,29 @@
+En la banca moderna, el fraude nunca duerme. Miles de transacciones con tarjeta ocurren cada segundo —a través de países, canales y monedas. Detectar actividad sospechosa manualmente es como buscar una aguja en un pajar en movimiento.
+
+Nuestro Investigador de Patrones de Fraude actúa como un analista digital —escaneando cada transacción y aplicando reglas inteligentes de velocidad, cambios de país y anomalías de comercio.
+
+Luego llama a un asistente de IA que piensa como un directivo sénior de riesgos —resumiendo los hallazgos clave:
+“Picos inusuales en MCC de apuestas y marketing directo; saltos transfronterizos en cuestión de minutos; y transiciones duplicadas de presencia física a comercio electrónico detectadas.”
+
+Finalmente, produce un informe HTML elegante con puntajes de riesgo, motivos y un resumen generado por IA en la parte superior —como un informe diario listo para la dirección.
+
+Aquí está nuestro elenco: el Agente de Ingesta detecta anomalías, el Agente Investigador correlaciona clientes, el Agente de Políticas verifica reglas y riesgo, y el Agente Comunicador redacta un informe en lenguaje natural.
+
+Aparece un pico de microtransacciones. Normalmente, una persona muestrearía, consultaría y documentaría. Nuestros agentes lo harán en segundos —y justificarán la decisión.
+
+El Agente de Ingesta valida la alerta y la enriquece con historial de cuenta.
+El Investigador agrupa transacciones, comprueba solapamientos de dispositivo/geo y busca patrones de “mulas”.
+El Agente de Políticas pondera reglas y resultados pasados para decidir: monitorear o escalar.
+
+Aquí está el momento decisivo: alta densidad de clúster + dispositivos compartidos + violación de velocidad. Los agentes eligen escalar —pero no como una caja negra. Producen un informe HTML listo para auditoría con pasos, evidencias y próximas acciones.
+
+
+Este es un solo alerta. Ahora imagina 10 mil al día en tarjetas, transferencias y billeteras. La IA agentiva no reemplaza a los analistas —les da superpoderes: menos falsos positivos, investigaciones más rápidas y justificaciones claras.
+
+Si quieres esto para triaje sanitario o churn en telco, se aplica el mismo patrón —cambia fuentes de datos y políticas.
+
+Se quieres saber mas sobre casos de uso de AI, no olvide los proximos videos ! 
+
+Buenas ventas ! 
+
+
