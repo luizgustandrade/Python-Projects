@@ -1,0 +1,12 @@
+Bienvenido a AI Use Cases in Action!
+
+En ventas y marketing, el mayor desafío no es generar leads, sino saber cuáles realmente importan.
+Los equipos desperdician horas investigando empresas, validando datos y calificando prospectos antes de la primera llamada.
+
+Ahí es donde entra Agentic AI.
+En esta demo, nuestro flujo de trabajo comienza capturando datos brutos de leads —nombres, correos electrónicos y detalles de la empresa— desde cualquier CRM o formulario de registro.
+Luego, un Agente Investigador analiza cada lead, verificando datos web, industria y tamaño de la empresa para enriquecer la información faltante y asignar un puntaje de valor potencial.
+El Agente de Razonamiento resume los principales hallazgos —como segmento, intención o señales de compra— para que los vendedores sepan exactamente dónde enfocar sus esfuerzos.
+Finalmente, un Agente Comunicador entrega un informe limpio y enriquecido, listo para importar nuevamente en el CRM.
+
+Con Agentic AI, lo que antes tomaba horas de investigación manual ahora sucede al instante, permitiendo que los vendedores pasen menos tiempo persiguiendo datos y más tiempo cerrando negocios.
