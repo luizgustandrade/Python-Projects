@@ -1,0 +1,15 @@
+Welcome to AI Use Cases in Action!
+
+In sales and marketing, the biggest challenge isn’t getting leads — it’s knowing which ones matter.
+Teams waste hours researching companies, validating data, and qualifying prospects before the first call.
+
+That’s where Agentic AI comes in.
+
+In this demo, our workflow starts by capturing raw lead data — names, emails, and company details — from any CRM or form submission.
+Next, an Investigator Agent analyzes each lead, checking web data, industry, and company size to enrich missing information and score potential value.
+The Reasoning Agent then summarizes key insights — like segment, intent, or buying signals — so sellers know exactly where to focus.
+Finally, a Communicator Agent delivers a clean, enriched report, ready to import back into your CRM.
+
+With Agentic AI, what used to take hours of manual research now happens instantly — empowering sellers to spend less time chasing data and more time closing deals.
+
+Stay tuned for more videos and Happy Selling
